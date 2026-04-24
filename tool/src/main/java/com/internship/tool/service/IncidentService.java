@@ -1,5 +1,6 @@
 package com.internship.tool.service;
-
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import com.internship.tool.entity.Incident;
 import com.internship.tool.exception.ResourceNotFoundException;
 import com.internship.tool.repository.IncidentRepository;
@@ -32,8 +33,8 @@ public class IncidentService {
         return incidentRepository.save(incident);
     }
 
-    public List<Incident> getAllIncidents() {
-        return incidentRepository.findAll();
+    public Page<Incident> getAllIncidents(Pageable pageable) {
+        return incidentRepository.findAll(pageable);
     }
 
     public Incident getIncidentById(Long id) {
