@@ -6,11 +6,12 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "incidents")
 @EntityListeners(AuditingEntityListener.class)
-public class Incident {
+public class Incident implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

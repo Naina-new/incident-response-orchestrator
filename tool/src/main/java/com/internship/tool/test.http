@@ -1,0 +1,12 @@
+### 1. Login to get your JWT Token
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "password123"
+}
+
+### 2. Get All Incidents (Cache Test)
+GET http://localhost:8080/api/incidents/all?page=0&size=10
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc3NzQ4ODYyNSwiZXhwIjoxNzc3NTc1MDI1fQ.BmutPziOeXvkEFfLZJ4ivQMvFzSIe8C-VYBRPHftMxM
