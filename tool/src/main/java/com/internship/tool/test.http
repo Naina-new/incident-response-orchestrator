@@ -10,3 +10,15 @@ Content-Type: application/json
 ### 2. Get All Incidents (Cache Test)
 GET http://localhost:8080/api/incidents/all?page=0&size=10
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc3NzQ4ODYyNSwiZXhwIjoxNzc3NTc1MDI1fQ.BmutPziOeXvkEFfLZJ4ivQMvFzSIe8C-VYBRPHftMxM
+
+
+### 3. Create a New Incident (Triggers Email!)
+POST http://localhost:8080/api/incidents/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc3NzUzMzQ4NiwiZXhwIjoxNzc3NjE5ODg2fQ.RooQltZSHYTDuEJbmtVAvD9WAvwNozJD5_KvLSlA6R0
+
+{
+  "title": "Main Database Down",
+  "description": "Production database is unresponsive causing login failures.",
+  "priority": "HIGH"
+}

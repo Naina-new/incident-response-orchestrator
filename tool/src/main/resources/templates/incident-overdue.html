@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body style="font-family: Arial, sans-serif; padding: 20px; color: #333;">
+<h2 style="color: #e74c3c;">⚠️ Overdue Incident Alert</h2>
+<p>Hello Team,</p>
+<p>The following incident has been OPEN for too long and requires immediate attention:</p>
+<ul>
+    <li><strong>Incident ID:</strong> <span th:text="${incidentId}"></span></li>
+    <li><strong>Title:</strong> <span th:text="${incidentTitle}"></span></li>
+</ul>
+<p>Please log in and resolve this issue.</p>
+</body>
+</html>

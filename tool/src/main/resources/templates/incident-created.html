@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New Incident Created</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px; }
+        .container { background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-width: 600px; margin: auto; }
+        .header { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; margin-bottom: 20px; }
+        .content { line-height: 1.6; color: #333; }
+        .highlight { font-weight: bold; color: #e74c3c; }
+        .footer { margin-top: 30px; font-size: 12px; color: #7f8c8d; text-align: center; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2 class="header">New Incident Alert</h2>
+
+    <div class="content">
+        <p>Hello Team,</p>
+        <p>A new incident has been successfully logged into the orchestrator system.</p>
+
+        <ul>
+            <li><strong>Incident ID:</strong> <span th:text="${incidentId}">123</span></li>
+            <li><strong>Title:</strong> <span th:text="${incidentTitle}">Sample Title</span></li>
+            <li><strong>Status:</strong> <span class="highlight" th:text="${incidentStatus}">OPEN</span></li>
+        </ul>
+
+        <p>Please log in to the dashboard to review and assign this incident.</p>
+    </div>
+
+    <div class="footer">
+        <p>This is an automated message from the Incident Response Orchestrator.</p>
+    </div>
+</div>
+</body>
+</html>

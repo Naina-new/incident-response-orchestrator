@@ -16,10 +16,13 @@ import java.util.List;
 public class IncidentService {
 
     private final IncidentRepository incidentRepository;
+    private final EmailService emailService; // 1. Add EmailService dependency
 
+    // 2. Update constructor to include EmailService
     @Autowired
-    public IncidentService(IncidentRepository incidentRepository) {
+    public IncidentService(IncidentRepository incidentRepository, EmailService emailService) {
         this.incidentRepository = incidentRepository;
+        this.emailService = emailService;
     }
 
     // Clear ALL caches when a new incident is created so old data isn't shown
@@ -35,7 +38,18 @@ public class IncidentService {
             incident.setStatus("OPEN");
         }
 
-        return incidentRepository.save(incident);
+        // 3. Save the incident FIRST so the database generates the ID
+        Incident savedIncident = incidentRepository.save(incident);
+
+        // 4. FIRE THE EMAIL! (Using the ID, Title, and Status from the saved incident)
+        emailService.sendIncidentCreatedEmail(
+                savedIncident.getId(),
+                savedIncident.getTitle(),
+                savedIncident.getStatus()
+        );
+
+        // 5. Return the saved incident
+        return savedIncident;
     }
 
     // Cache the paginated list (creates a unique key for each page number/size)

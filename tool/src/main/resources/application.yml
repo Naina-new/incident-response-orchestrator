@@ -19,24 +19,23 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
   # Redis Configuration
-
   data:
     redis:
       host: localhost
       port: 6379
 
   # Mail Configuration
-#  mail:
-#    host: ${MAIL_HOST}
-#    port: ${MAIL_PORT}
-#    username: ${MAIL_USERNAME}
-#    password: ${MAIL_PASSWORD}
-#    properties:
-#      mail:
-#        smtp:
-#          auth: true
-#          starttls:
-#            enable: true
+  mail:
+    host: sandbox.smtp.mailtrap.io
+    port: 2525
+    username: 6033da39dc0333
+    password: ffbc50a7bda518
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
 
 # JWT Configuration
 jwt:
