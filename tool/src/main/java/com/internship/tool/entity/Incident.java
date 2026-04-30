@@ -16,6 +16,7 @@ public class Incident implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String attachmentPath;
 
     @Column(name = "title", nullable = false)
     private String title;
@@ -40,6 +41,9 @@ public class Incident implements Serializable{
     // Getters and Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
+
+    public String getAttachmentPath() { return attachmentPath; }
+    public void setAttachmentPath(String attachmentPath) { this.attachmentPath = attachmentPath; }
 
     public String getTitle() { return title; }
     public void setTitle(String title) { this.title = title; }

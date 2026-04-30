@@ -23,7 +23,7 @@ public class IncidentScheduler {
     }
 
     // Cron expression: "0 * * * * *" means "Run at the start of every single minute"
-    @Scheduled(cron = "0 * * * * *")
+    //@Scheduled(cron = "0 * * * * *")
     public void checkOverdueIncidents() {
         System.out.println("⏰ Scheduler waking up to check for overdue incidents...");
 

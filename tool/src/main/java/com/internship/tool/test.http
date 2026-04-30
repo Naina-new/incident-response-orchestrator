@@ -22,3 +22,18 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc3NzUzM
   "description": "Production database is unresponsive causing login failures.",
   "priority": "HIGH"
 }
+
+### 4. Test 404 Global Exception Handler
+GET http://localhost:8080/api/incidents/99999
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc3NzUzMzQ4NiwiZXhwIjoxNzc3NjE5ODg2fQ.RooQltZSHYTDuEJbmtVAvD9WAvwNozJD5_KvLSlA6R0
+
+### 5. Upload Attachment
+POST http://localhost:8080/api/incidents/3/upload
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc3NzU0NzYyNSwiZXhwIjoxNzc3NjM0MDI1fQ.zlvn0P29z9yWUt1BQ-wb3DnvMrJ8RcFI9-H4mT8uSis
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="file"; filename="test.png"
+
+< C:/Users/LENOVO/Pictures/Screenshots/Screenshot (266).png
+--boundary--
